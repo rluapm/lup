@@ -1,7 +1,7 @@
 local m = {}
 
 function m:Rename(obj, name)
-    If obj == "self" then
+    if obj == "self" then
         script.Parent.Name = name
     else
         obj.Name = name
