@@ -36,6 +36,7 @@ function m.path(obj)
 
 	repeat
 		table.insert(pathstuff, bleh)
+		print(bleh)
 		bleh = bleh.Parent
 	until typeof(bleh) == game
 
