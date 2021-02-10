@@ -29,7 +29,7 @@ function m.path(obj)
   repeat
       table.insert(pathstuff, bleh)
       bleh = bleh.Parent
-  until tostring(bleh) == "game"
+  until typeof(bleh) == game
 
   local fullpath
 
