@@ -1,6 +1,14 @@
 local m = {}
 
-function m:GetSiblings(obj, name)
+function m:Rename(obj, name)
+    If obj == "self" then
+        script.Parent.Name = name
+    else
+        obj.Name = name
+    end
+end
+
+function m:GetSiblings(obj)
 	local siblings = {}
 	if obj == "self" then
 	for i,v in pairs(script.Parent:GetChildren()) do
@@ -19,7 +27,7 @@ function m.path(obj)
 	local bleh
 
 	if obj == "self" then
-		bleh = script.Parent[script.Name]
+		bleh = script
 	else
 		bleh = obj.Parent
 	end
