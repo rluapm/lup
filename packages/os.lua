@@ -37,9 +37,9 @@ function m.path(obj)
 	repeat
 		table.insert(pathstuff, bleh)
 		print(bleh.Name)
-		if breh == nil then break
+		if breh.Name == game.Name then break
 		bleh = bleh.Parent
-	until bleh.Name == nil
+	until bleh.Name == game.Name
 
 	local fullpath
 
