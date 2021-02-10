@@ -2,15 +2,15 @@ local m = {}
 
 local http = game:GetService("HttpService")
 
-_G.DISCORD_WEBHOOK = ''
+local dw = ''
 
 function m:Init(w)
-    _G.DISCORD_WEBHOOK = w
+    dw = w
 end
 
 function m:Send(o)
     local newdata = http:JSONEncode(o)
-    http:PostAsync(_G.DISCORD_WEBHOOK, newdata)
+    http:PostAsync(dw, newdata)
     
     return true
 end

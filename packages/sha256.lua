@@ -175,7 +175,7 @@ local function digestblock(msg, i, H)
 	H[8] = band(H[8] + h)
 end
 
-function m(msg)
+function sha256func(msg)
 	msg = preproc(msg, #msg)
 	local H = initH256({})
 	for i = 1, #msg, 64 do digestblock(msg, i, H) end
@@ -183,4 +183,4 @@ function m(msg)
 		num2s(H[5], 4) .. num2s(H[6], 4) .. num2s(H[7], 4) .. num2s(H[8], 4))
 end
 
-return m
+return sha256func
