@@ -27,7 +27,7 @@ function m.path(obj)
 	local bleh
 
 	if obj == "self" then
-		bleh = script
+		bleh = script.Parent
 	else
 		bleh = obj.Parent
 	end
