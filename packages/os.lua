@@ -23,6 +23,7 @@ else
 end
 end
 
+--[[
 function m.path(obj)
 	local bleh
 
@@ -51,5 +52,6 @@ function m.path(obj)
 
 	return fullpath
 end
+]]--
 
 return m
