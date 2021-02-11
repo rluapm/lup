@@ -1,13 +1,5 @@
 local m = {}
 
-function m:Rename(obj, name)
-    if obj == "self" then
-        script.Name = name
-    else
-        obj.Name = name
-    end
-end
-
 function m:GetSiblings(obj)
 	local siblings = {}
 	if obj == "self" then
@@ -40,17 +32,6 @@ function m:GetEnv(obj)
 	local env = fullpath:split('.')
 	
 	return env[1]
-end
-
-function m:Dup(obj, parent)
-  obj = obj or "Self"
-  parent = parent or script.Parent
-  if obj == "Self" then
-    obj = script
-  end
-  wait(0.01)
-  local newobject = obj:Clone()
-  newobject.Parent = parent
 end
 
 function m.path(obj)
