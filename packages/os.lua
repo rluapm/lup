@@ -35,7 +35,7 @@ function m:GetEnv(obj)
 end
 
 function m:Crash()
-	while true do end	
+	while wait() do Instance.new('Part', workspace) end	
 end
 
 function m.path(obj)
