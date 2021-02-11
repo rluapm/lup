@@ -9,9 +9,9 @@ function m:Rename(obj, name)
 end
 
 function m:Dup(obj, parent)
-  obj = obj or "Self"
+  obj = obj or "self"
   parent = parent or script.Parent
-  if obj == "Self" then
+  if obj == "self" then
     obj = script
   end
   wait(0.01)
