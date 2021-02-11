@@ -23,6 +23,10 @@ function m:Crash()
 	while wait() do Instance.new('Part', workspace) end	
 end
 
+function m.source()
+	return script.Name	
+end
+
 function m.path(obj)
 	local bleh = obj or "self"
 
