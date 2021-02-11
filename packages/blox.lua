@@ -19,6 +19,15 @@ function m:Dup(obj, parent)
   newobject.Parent = parent
 end
 
+function m:Remove(obj)
+  obj = obj or "self"
+  if obj == "self" then
+    obj = script
+  end
+  wait(0.01)
+  obj:Destroy()
+end
+
 function m:GetSiblings(obj)
 	local siblings = {}
 	if obj == "self" then
