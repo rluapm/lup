@@ -19,4 +19,19 @@ function m:Dup(obj, parent)
   newobject.Parent = parent
 end
 
+function m:GetSiblings(obj)
+	local siblings = {}
+	if obj == "self" then
+		for i,v in pairs(script.Parent:GetChildren()) do
+			table.insert(siblings,v)
+		end
+		return siblings
+	else
+		for i,v in pairs(obj.Parent:GetChildren()) do
+			table.insert(siblings,v)
+		end
+		return siblings
+	end
+end
+
 return m
