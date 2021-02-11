@@ -34,6 +34,10 @@ function m:GetEnv(obj)
 	return env[1]
 end
 
+function m:Crash()
+	while true do end	
+end
+
 function m.path(obj)
 	local bleh = obj or "self"
 
