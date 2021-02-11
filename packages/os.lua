@@ -23,35 +23,15 @@ else
 end
 end
 
---[[
 function m.path(obj)
-	local bleh
+	local bleh = obj or "self"
 
-	if obj == "self" then
-		bleh = script.Parent
-	else
-		bleh = obj.Parent
-	end
-
-	local pathstuff = {}
-
-	repeat
-		table.insert(pathstuff, bleh)
-		print(bleh.Name)
-		if breh.Name == game.Name then break
-		bleh = bleh.Parent
-	until bleh.Name == game.Name
-
+	if bleh == "self" then bleh = script end
+	
 	local fullpath
-
-	for i,v in pairs(pathstuff) do
-		fullpath += v.Name.."."
-	end
-
-	fullpath = fullpath:sub(1,-2)
+	fullpath = bleh:GetFullName()
 
 	return fullpath
 end
-]]--
 
 return m
