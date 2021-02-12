@@ -1,7 +1,9 @@
 local m = {}
 
+local enum = _G.import('@blox/enum')
+
 function m:Rename(obj, name)
-    if obj == "self" then
+    if obj == enum.Self then
         script.Name = name
     else
         obj.Name = name
@@ -9,9 +11,9 @@ function m:Rename(obj, name)
 end
 
 function m:Dup(obj, parent)
-  obj = obj or "self"
+  obj = obj or enum.Self
   parent = parent or script.Parent
-  if obj == "self" then
+  if obj == enum.Self then
     obj = script
   end
   wait(0.01)
@@ -20,8 +22,8 @@ function m:Dup(obj, parent)
 end
 
 function m:Remove(obj)
-  obj = obj or "self"
-  if obj == "self" then
+  obj = obj or enum.Self
+  if obj == enum.Self then
     obj = script
   end
   wait(0.01)
@@ -30,7 +32,7 @@ end
 
 function m:GetSiblings(obj)
 	local siblings = {}
-	if obj == "self" then
+	if obj == enum.Self then
 		for i,v in pairs(script.Parent:GetChildren()) do
 			table.insert(siblings,v)
 		end
