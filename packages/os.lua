@@ -1,5 +1,7 @@
 local m = {}
 
+local enum = _G.import('@os/enum')
+
 function m:Error(plr, err, code)
   local c = code or 1
 
@@ -7,9 +9,9 @@ function m:Error(plr, err, code)
 end
 
 function m:GetEnv(obj)
-	local bleh = obj or "self"
+	local bleh = obj or enum.Self
 
-	if bleh == "self" then bleh = script end
+	if bleh == enum.Self then bleh = script end
 	
 	local fullpath
 	fullpath = bleh:GetFullName()
@@ -28,9 +30,9 @@ function m.source()
 end
 
 function m.path(obj)
-	local bleh = obj or "self"
+	local bleh = obj or enum.Self
 
-	if bleh == "self" then bleh = script end
+	if bleh == enum.Self then bleh = script end
 	
 	local fullpath
 	fullpath = bleh:GetFullName()
