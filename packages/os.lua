@@ -11,7 +11,7 @@ end
 function m:GetEnv(obj)
 	local bleh = obj or enum.Self
 
-	if bleh == enum.Self then bleh = script end
+	if bleh:lower() == enum.Self then bleh = script end
 	
 	local fullpath
 	fullpath = bleh:GetFullName()
@@ -32,7 +32,7 @@ end
 function m.path(obj)
 	local bleh = obj or enum.Self
 
-	if bleh == enum.Self then bleh = script end
+	if bleh:lower() == enum.Self then bleh = script end
 	
 	local fullpath
 	fullpath = bleh:GetFullName()
