@@ -5,19 +5,21 @@ local hash = _G.import('sha256')
 
 local log = {}
 
-function m:Start(target,args)
-    local as = args or nil
+function m:Start(target,...)
+    local as = {...} or nil
     local status
     local err
     if as == nil then
-        status, err = pcall(target)
+        status, err = spawn(function() pcall(target) end)
     else
-        status, err = pcall(target, as)
+        status, err = spawn(function() pcall(target, unpack(as)) end)
     end
 
     local custom_id = hash(http:GenerateGUID()..status..err.code)
 
     local struct = {['Log']=table.getn(log), ['id']=custom_id, ['status']=status, ['code']=err.code}
+    
+    table.insert(log, struct)
     do return struct end
 end
 
