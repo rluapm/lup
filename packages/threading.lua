@@ -8,16 +8,15 @@ local log = {}
 function m:Start(target,...)
     local as = {...} or nil
     local status
-    local err
     if as == nil then
-        status, err = spawn(function() pcall(target) end)
+        status = spawn(function() pcall(target) end)
     else
-        status, err = spawn(function() pcall(target, unpack(as)) end)
+        status = spawn(function() pcall(target, unpack(as)) end)
     end
 
-    local custom_id = hash(http:GenerateGUID()..status..err.code)
+    local custom_id = hash(http:GenerateGUID()..table.getn(log)..status)
 
-    local struct = {['Log']=table.getn(log), ['id']=custom_id, ['status']=status, ['code']=err.code}
+    local struct = {['Log']=table.getn(log), ['id']=custom_id}
     
     table.insert(log, struct)
     do return struct end
