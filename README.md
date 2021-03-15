@@ -2,7 +2,7 @@
 Roblox Lua Package Manager
 
 # How to use
-Click this [link](https://www.roblox.com/library/6320827379/Lua-Package-Manager-Main) to get this module!
+Click this [link](https://www.roblox.com/library/6320827379/Lua-Package-Manager-Main) to get this module! (or [this](https://raw.githubusercontent.com/rluapm/lup/main/lupio.lua) to get the All In One script.)
 
 Then, make sure that you have HttpService enabled and LoadStringEnabled checked in ServerScriptService.
 
