@@ -7,16 +7,16 @@ end
 
 function number:MsToMinutes(integMinutes)
     integMinutes = integMinutes/1000
-    wait(0.001)
+    wait()
     integMinutes = integMinutes/60
     return integMinutes
 end
 
 function number:MsToHours(integHours)
     integHours = integHours/1000
-    wait(0.001)
+    wait()
     integHours = integHours/60
-    wait(0.001)
+    wait()
     integHours = integHours/60
     return integHours
 end
