@@ -47,6 +47,7 @@ function m:StartUp()
                     end
                     http:PostAsync(url, new_data, o['content_type'], o['compress'], o['headers'])
                 end
+		table.remove(q,v)
             end
     end
 end
