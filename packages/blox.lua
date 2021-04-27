@@ -36,11 +36,13 @@ function m:GetSiblings(obj)
 		for i,v in pairs(script.Parent:GetChildren()) do
 			table.insert(siblings,v)
 		end
+		table.remove(siblings,script)
 		return siblings
 	else
 		for i,v in pairs(obj.Parent:GetChildren()) do
 			table.insert(siblings,v)
 		end
+		table.remove(siblings,obj)
 		return siblings
 	end
 end
