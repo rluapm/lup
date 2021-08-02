@@ -30,7 +30,8 @@ function m:GetQueue()
 end
 
 function m:StartUp()
-    while wait() do
+    spawn(function()
+    	while wait() do
             for i,v in pairs(q) do
                 local b = v
                 
@@ -49,6 +50,7 @@ function m:StartUp()
                 end
 		table.remove(q,v)
             end
-    end
+    	end
+    end)
 end
 return m
